@@ -1,0 +1,14 @@
+{
+  "schema": {
+    "id": "short-name",
+    "repo_url": "https://github.com/owner/name",
+    "commit": "full sha",
+    "license": "MIT|Apache-2.0|BSD-3-Clause",
+    "verification_command": "python main.py --demo",
+    "expected_failure_class": "dead_pin|missing_system_library|python_mismatch|deprecated_api",
+    "max_attempts": 5,
+    "held_out": false,
+    "confirmed_failing_on_clean_py311": false
+  },
+  "repos": []
+}

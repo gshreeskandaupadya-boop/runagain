@@ -1,0 +1,4 @@
+requests>=2.31
+jsonschema>=4.21
+fastapi>=0.110
+uvicorn>=0.29
