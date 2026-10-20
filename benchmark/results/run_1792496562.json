@@ -1,0 +1,132 @@
+{
+  "revived": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "state": {
+        "py": "3.11",
+        "apt": [],
+        "pins": {
+          "numpy": "1.24.0"
+        }
+      },
+      "result": {
+        "stage": "build",
+        "exit_code": 1,
+        "log": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.runagain\n#1 transferring dockerfile: 38B 0.0s\n#1 transferring dockerfile: 173B 0.1s done\n#1 DONE 0.2s\n\n#2 [internal] load metadata for docker.io/library/python:3.11-slim\n#2 DONE 0.4s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.1s\n\n#4 [internal] load build context\n#4 DONE 0.0s\n\n#5 [1/4] FROM docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce\n#5 resolve docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce 0.1s done\n#5 DONE 0.1s\n\n#4 [internal] load build context\n#4 transferring context: 31.64kB 0.1s done\n#4 DONE 0.2s\n\n#6 [2/4] WORKDIR /app\n#6 CACHED\n\n#7 [3/4] COPY . /app\n#7 DONE 0.1s\n\n#8 [4/4] RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\n#8 5.228 Collecting numpy==1.19.0 (from -r requirements.runagain.txt (line 1))\n#8 5.467   Downloading numpy-1.19.0.zip (7.3 MB)\n#8 15.34      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 7.3/7.3 MB 737.9 kB/s eta 0:00:00\n#8 16.11   Installing build dependencies: started\n#8 28.04   Installing build dependencies: finished with status 'done'\n#8 28.05   Getting requirements to build wheel: started\n#8 28.97   Getting requirements to build wheel: finished with status 'done'\n#8 28.97   Preparing metadata (pyproject.toml): started\n#8 29.24   Preparing metadata (pyproject.toml): finished with status 'error'\n#8 29.26   error: subprocess-exited-with-error\n#8 29.26   \n#8 29.26   \u00d7 Preparing metadata (pyproject.toml) did not run successfully.\n#8 29.26   \u2502 exit code: 1\n#8 29.26   \u2570\u2500> [27 lines of output]\n#8 29.26       Running from numpy source directory.\n#8 29.26       <string>:460: UserWarning: Unrecognized setuptools command, proceeding with generating Cython sources and expanding templates\n#8 29.26       Traceback (most recent call last):\n#8 29.26         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 353, in <module>\n#8 29.26           main()\n#8 29.26         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 335, in main\n#8 29.26           json_out['return_val'] = hook(**hook_input['kwargs'])\n#8 29.26                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n#8 29.26         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 149, in prepare_metadata_for_build_wheel\n#8 29.26           return hook(metadata_directory, config_settings)\n#8 29.26                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n#8 29.26         File \"/tmp/pip-build-env-v4pf65ok/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 380, in prepare_metadata_for_build_wheel\n#8 29.26           self.run_setup()\n#8 29.26         File \"/tmp/pip-build-env-v4pf65ok/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n#8 29.26           super().run_setup(setup_script=setup_script)\n#8 29.26         File \"/tmp/pip-build-env-v4pf65ok/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n#8 29.26           exec(code, locals())  # noqa: S102 # exec is intentional here\n#8 29.26           ^^^^^^^^^^^^^^^^^^^^\n#8 29.26         File \"<string>\", line 489, in <module>\n#8 29.26         File \"<string>\", line 465, in setup_package\n#8 29.26         File \"/tmp/pip-install-3ux1ujvg/numpy_ff30636a27804e2ebd69b3afdbc7e0e5/numpy/distutils/core.py\", line 24, in <module>\n#8 29.26           from numpy.distutils.command import config, config_compiler, \\\n#8 29.26         File \"/tmp/pip-install-3ux1ujvg/numpy_ff30636a27804e2ebd69b3afdbc7e0e5/numpy/distutils/command/config.py\", line 19, in <module>\n#8 29.26           from numpy.distutils.mingw32ccompiler import generate_manifest\n#8 29.26         File \"/tmp/pip-install-3ux1ujvg/numpy_ff30636a27804e2ebd69b3afdbc7e0e5/numpy/distutils/mingw32ccompiler.py\", line 28, in <module>\n#8 29.26           from distutils.msvccompiler import get_build_version as get_build_msvc_version\n#8 29.26       ModuleNotFoundError: No module named 'distutils.msvccompiler'\n#8 29.26       [end of output]\n#8 29.26   \n#8 29.26   note: This error originates from a subprocess, and is likely not a problem with pip.\n#8 29.26 error: metadata-generation-failed\n#8 29.26 \n#8 29.26 \u00d7 Encountered error while generating package metadata.\n#8 29.26 \u2570\u2500> See above for output.\n#8 29.26 \n#8 29.26 note: This is an issue with the package mentioned above, not pip.\n#8 29.26 hint: See above for details.\n#8 29.52 \n#8 29.52 [notice] A new release of pip is available: 24.0 -> 26.2.1\n#8 29.52 [notice] To update, run: pip install --upgrade pip\n#8 ERROR: process \"/bin/sh -c pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\" did not complete successfully: exit code: 1\n------\n > [4/4] RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt:\n29.26 error: metadata-generation-failed\n29.26 \n29.26 \u00d7 Encountered error while generating package metadata.\n29.26 \u2570\u2500> See above for output.\n29.26 \n29.26 note: This is an issue with the package mentioned above, not pip.\n29.26 hint: See above for details.\n29.52 \n29.52 [notice] A new release of pip is available: 24.0 -> 26.2.1\n29.52 [notice] To update, run: pip install --upgrade pip\n------\nDockerfile.runagain:4\n--------------------\n   2 |     WORKDIR /app\n   3 |     COPY . /app\n   4 | >>> RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\n   5 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\" did not complete successfully: exit code: 1\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/rti7ktpsszhah64z99gqv2pw2\n"
+      },
+      "research": [
+        {
+          "title": "Python versions in Debian and Ubuntu official Docker images \u00b7 GitHub",
+          "url": "https://gist.github.com/turicas/aabe80601a69287766cb8a4307e0910e",
+          "content": "| Debian GNU/Linux | 8 | jessie | 2015-04-25 | 2018-06-17 | Python 3.4.2 |\n| Ubuntu | 25.10 | questing | 2025-10-09 | 2026-07-01 | Python 3.13.7 |\n| Ubuntu | 25.04 | plucky | 2025-04-17 | 2026-01-01 | Python 3.13.3 |\n| Ubuntu | 24.10 | oracular | 2024-10-10 | 2025-07-01 | Python 3.12.7 |\n| Ubuntu | 24.04 | noble | 2024-04-25 | 2029-04-01 | Python 3.12.3 |\n| Ubuntu | 23.10 | mantic | 2023-10-12 | 2024-07-11 | Python 3.11.6 |\n| Ubuntu | 23.04 | lunar | 2023-04-20 | 2024-01-25 | Python 3.11.4 | [...] | Ubuntu | 15.10 | wily | 2015-10-22 | 2016-07-28 | Python 3.4.3+ |\n| Ubuntu | 14.04 | trusty | 2014-04-17 | 2019-04-01 | Python 3.4.3 |\n| Fedora Linux | 43  2025-10-28 | 2026-12-09 | Python 3.14.0 |\n| Fedora Linux | 42 | adams | 2025-04-15 | 2026-05-13 | Python 3.13.9 |\n| Fedora Linux | 41  2024"
+        },
+        {
+          "title": "Explore the Builds view in Docker Desktop | Docker Docs",
+          "url": "https://docs.docker.com/desktop/use-desktop/builds",
+          "content": "The build summary for the `docker/build-push-action` and `docker/bake-action` GitHub Actions includes a link to download the build records, for inspecting CI jobs with Docker Desktop.\n\n## Inspect builds\n\nTo inspect a build, select the build that you want to view in the list. The inspection view contains a number of tabs.\n\nThe Info tab displays details about the build. [...] Table of contents\n\nThe Builds view provides an interactive interface for inspecting build history, monitoring active builds, and managing builders directly in Docker Desktop.\n\nBy default, the Build history tab displays a list of completed builds, sorted by date (newest first). Switch to the Active builds tab to view ongoing builds. [...] | Build operation | Description |\n --- |\n| Local file transfers | Time spent transf"
+        },
+        {
+          "title": "Download Python | Python.org",
+          "url": "https://www.python.org/downloads",
+          "content": "10. Python 3.13.16 Sept. 30, 2026  Download Release notes\n11. Python 3.13.15 Aug. 5, 2026  Download Release notes\n12. Python 3.13.14 June 10, 2026  Download Release notes\n13. Python 3.13.13 April 7, 2026  Download Release notes\n14. Python 3.13.12 Feb. 3, 2026  Download Release notes\n15. Python 3.13.11 Dec. 5, 2025  Download Release notes\n16. Python 3.13.10 Dec. 2, 2025  Download Release notes\n17. Python 3.13.9 Oct. 14, 2025  Download Release notes [...] 61. Python 3.10.22 Oct. 1, 2026  Download Release notes\n62. Python 3.10.21 Aug. 12, 2026  Download Release notes\n63. Python 3.10.20 March 3, 2026  Download Release notes\n64. Python 3.10.19 Oct. 9, 2025  Download Release notes\n65. Python 3.10.18 June 3, 2025  Download Release notes\n66. Python 3.10.17 April 8, 2025  Download Release notes\n67."
+        },
+        {
+          "title": "Python 3.11 - Red Hat Ecosystem Catalog",
+          "url": "https://catalog.redhat.com/software/containers/ubi9/python-311/63f764b03f0b02a2e2d63fff",
+          "content": "We\u2019re the world\u2019s leading provider of enterprise open source solutions\u2014including Linux, cloud, container, and Kubernetes. We deliver hardened solutions that make it easier for enterprises to work across platforms and environments, from the core datacenter to the network edge.\n\n### Red Hat legal and privacy links\n\n About Red Hat\n Jobs\n Events\n Locations\n Contact Red Hat\n Red Hat Blog\n Inclusion at Red Hat\n Cool Stuff Store\n Red Hat Summit\n\n\u00a9 2026 Red Hat, LLC [...] ### Red Hat legal and privacy links\n\n Privacy statement\n Terms of use\n All Policies and guidelines\n Digital accessibility\n\nFeedback\n\nPython 3.11 - Red Hat Ecosystem Catalog\n\nubi9/python-311\n\n# Python 3.11\n\nRed Hat\n\nDeprecated\n\n9.8-17799457151-1779945715\n\nChange version\n\nArchitecture: ppc64le\n\nUpdated\n\nHome\n\nAll container results"
+        },
+        {
+          "title": "python - Official Image | Docker Hub",
+          "url": "https://hub.docker.com/_/python",
+          "content": "`3.13.16-windowsservercore-ltsc2025`, `3.13-windowsservercore-ltsc2025`\u2060\n `3.13.16-windowsservercore-ltsc2022`, `3.13-windowsservercore-ltsc2022`\u2060\n `3.12.15-trixie`, `3.12-trixie`\u2060\n `3.12.15-slim-trixie`, `3.12-slim-trixie`, `3.12.15-slim`, `3.12-slim`\u2060\n `3.12.15-bookworm`, `3.12-bookworm`\u2060\n `3.12.15-slim-bookworm`, `3.12-slim-bookworm`\u2060\n `3.12.15-alpine3.24`, `3.12-alpine3.24`, `3.12.15-alpine`, `3.12-alpine`\u2060\n `3.12.15-alpine3.23`, `3.12-alpine3.23`\u2060\n `3.11.17-trixie`, `3.11-trixie`\u2060 [...] `3.11.17-slim-trixie`, `3.11-slim-trixie`, `3.11.17-slim`, `3.11-slim`\u2060\n `3.11.17-bookworm`, `3.11-bookworm`\u2060\n `3.11.17-slim-bookworm`, `3.11-slim-bookworm`\u2060\n `3.11.17-alpine3.24`, `3.11-alpine3.24`, `3.11.17-alpine`, `3.11-alpine`\u2060\n `3.11.17-alpine3.23`, `3.11-alpine3.23`\u2060 [...] + `3.13.16-windowsserv"
+        }
+      ],
+      "decision": {
+        "failure_class": "deprecated_api",
+        "root_cause": "NumPy 1.19.0 source build attempts to import distutils.msvccompiler, which is Windows-specific and removed/deprecated in Python 3.11 on Linux, causing metadata generation failure.",
+        "confidence": 0.9,
+        "strategy": "pin_version",
+        "change": {
+          "pip_pins": {
+            "numpy": "1.24.0"
+          },
+          "apt_packages": [],
+          "python_version": "",
+          "patch": ""
+        },
+        "verification_command": "python -c \"import numpy; print('NumPy version:', numpy.__version__)\"",
+        "sources_used": []
+      }
+    },
+    {
+      "attempt": 2,
+      "state": {
+        "py": "",
+        "apt": [],
+        "pins": {
+          "numpy": "1.24.0"
+        }
+      },
+      "result": {
+        "stage": "build",
+        "exit_code": 1,
+        "log": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.runagain\n#1 transferring dockerfile: 169B 0.0s done\n#1 WARN: InvalidDefaultArgInFrom: Default value for ARG python:-slim results in empty or invalid base image name (line 1)\n#1 DONE 0.0s\n\n \u001b[33m1 warning found (use docker --debug to expand):\n\u001b[0m - InvalidDefaultArgInFrom: Default value for ARG python:-slim results in empty or invalid base image name (line 1)\nDockerfile.runagain:1\n--------------------\n   1 | >>> FROM python:-slim\n   2 |     WORKDIR /app\n   3 |     COPY . /app\n--------------------\nERROR: failed to build: failed to solve: failed to parse stage name \"python:-slim\": invalid reference format\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/pc5brls2iu6vjl0asfzynhqzg\n"
+      },
+      "research": [
+        {
+          "title": "Explore the Builds view in Docker Desktop | Docker Docs",
+          "url": "https://docs.docker.com/desktop/use-desktop/builds",
+          "content": "Table of contents\n\nThe Builds view provides an interactive interface for inspecting build history, monitoring active builds, and managing builders directly in Docker Desktop.\n\nBy default, the Build history tab displays a list of completed builds, sorted by date (newest first). Switch to the Active builds tab to view ongoing builds. [...] The build summary for the `docker/build-push-action` and `docker/bake-action` GitHub Actions includes a link to download the build records, for inspecting CI jobs with Docker Desktop.\n\n## Inspect builds\n\nTo inspect a build, select the build that you want to view in the list. The inspection view contains a number of tabs.\n\nThe Info tab displays details about the build. [...] | Build operation | Description |\n --- |\n| Local file transfers | Time spent transf"
+        },
+        {
+          "title": "Docker Builds view not showing build history \u00b7 Issue #7327 \u00b7 docker/for-mac \u00b7 GitHub",
+          "url": "https://github.com/docker/for-mac/issues/7327",
+          "content": "[+] Building 12.2s (6/6) FINISHED docker:desktop-linux => [internal] load build definition from Dockerfile 6.9s => => transferring dockerfile: 51B 6.9s => [internal] load metadata for docker.io/library/debian:9 1.4s => [auth] library/debian:pull token for registry-1.docker.io 0.0s => [internal] load .dockerignore 0.1s => => transferring context: 2B 0.1s => [1/1] FROM docker.io/library/debian:9@sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be 3.8s => => resolve [...] 43.21MB / 43.21MB 2.9s => => extracting sha256:d8ccec8a513f896fedd1d9765f3f2abf98bc8264f61cecf17919c80c9aa7ddbc 0.9s => exporting to image 0.0s => => exporting layers 0.0s => => writing image sha256:4af7ed1536f57b78e2ef1b5acf858183d4d684f4eeca435d49ee1d707284ef0e 0.0s => => naming to docker.io/library/deb"
+        },
+        {
+          "title": "Announcing Builds View in Docker Desktop GA | Docker",
+          "url": "https://www.docker.com/blog/announcing-builds-view-in-docker-desktop-ga",
+          "content": "Update to Docker Desktop 4.26 to get started!\n\n## Learn more\n\n Read the Builds view documentation.\n Upgrade to Docker Desktop 4.26.\n Read the Docker Desktop Release Notes.\n Get the latest release of Docker Desktop.\n Have questions? The Docker community is here to help.\n\ndevelopers   Docker   Docker Desktop   Docker Desktop release   Products\n\nTable of contents\n\n## Related Posts\n\n Sep 24, 2026\n\n  #### Manufacturing Trust for AI Agents | Docker\u2019s WeAreDevelopers Keynote [...] ## Get started\n\nThe new Builds view is available in the new Docker Desktop 4.26 release; upgrade and click on the new Builds tab in the Dashboard menu.\n\nWe are excited about the new Builds view, but this is just the start. There are many more features in the pipeline, but we would love to hear what you think.\n\nGive Buil"
+        },
+        {
+          "title": "How to Use Docker Desktop Dashboard Effectively",
+          "url": "https://oneuptime.com/blog/post/2026-02-08-how-to-use-docker-desktop-dashboard-effectively/view",
+          "content": "Each build provides details such as:\n\nLook for builds with low cache hit rates. These indicate that your Dockerfile layer ordering could be improved. Move frequently changing layers (like COPY . .) toward the end of the Dockerfile so earlier layers stay cached.\n\n### Build Logs\n\nClick on any build to see the detailed build log and timing information. The timing charts and logs help you identify where optimization efforts will have the biggest impact. [...] ### Volume Data Inspection\n\nClick on a volume, then use the \"Stored data\" tab to browse the files stored in it. This saves you from running temporary containers just to check volume contents.\n\n`# CLI equivalent (running a temporary container to browse a volume)\ndocker run --rm -v my-volume:/data alpine ls -la /data`\n\n## The Builds View\n\nT"
+        },
+        {
+          "title": "Docker Announces Docker Extensions and Docker Desktop for Linux at DockerCon 2022",
+          "url": "https://finance.yahoo.com/news/docker-announces-docker-extensions-docker-150000645.html",
+          "content": "Available today, Docker Desktop for Linux gives developers using Linux desktop environments an identical local development experience to collaborators using Docker Desktop on macOS and Windows, including access to the latest features such as Docker Extensions. Docker Desktop for Linux comes pre-packaged with tools like Docker Compose, the Docker CLI and Kubernetes, simplifying the installation and update process for this tooling. The Docker Desktop for Linux dashboard also makes it easier for [...] makes it easier for developers to perform common Docker actions involving the management of containers, images and volumes. All of this helps to improve developer productivity and collaboration within teams using Docker Desktop. [...] In addition, the company announced the generally available re"
+        }
+      ],
+      "decision": {
+        "failure_class": "python_mismatch",
+        "root_cause": "Dockerfile line `FROM python:-slim` uses an ARG with a default that results in an empty base image name, producing an invalid reference format.",
+        "confidence": 0.9,
+        "strategy": "python_version",
+        "change": {
+          "python_version": "3.11"
+        },
+        "verification_command": "docker build -f Dockerfile.runagain .",
+        "sources_used": []
+      }
+    },
+    {
+      "attempt": 3,
+      "state": {
+        "py": "3.11",
+        "apt": [],
+        "pins": {
+          "numpy": "1.24.0"
+        }
+      },
+      "result": {
+        "stage": "run",
+        "exit_code": 0,
+        "log": "1.24.0\n"
+      }
+    }
+  ],
+  "dockerfile": "FROM python:3.11-slim\nWORKDIR /app\nCOPY . /app\nRUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\n"
+}

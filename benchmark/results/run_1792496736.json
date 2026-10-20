@@ -1,0 +1,276 @@
+{
+  "revived": false,
+  "attempts": [
+    {
+      "attempt": 1,
+      "state": {
+        "py": "3.11",
+        "apt": [],
+        "pins": {}
+      },
+      "result": {
+        "stage": "build",
+        "exit_code": 1,
+        "log": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.runagain\n#1 transferring dockerfile: 173B 0.0s done\n#1 DONE 0.1s\n\n#2 [internal] load metadata for docker.io/library/python:3.11-slim\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.1s\n\n#4 [internal] load build context\n#4 DONE 0.0s\n\n#5 [1/4] FROM docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce\n#5 resolve docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce 0.1s done\n#5 DONE 0.1s\n\n#4 [internal] load build context\n#4 transferring context: 31.64kB 0.1s done\n#4 DONE 0.1s\n\n#6 [2/4] WORKDIR /app\n#6 CACHED\n\n#7 [3/4] COPY . /app\n#7 DONE 0.1s\n\n#8 [4/4] RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\n#8 4.407 Collecting numpy==1.19.0 (from -r requirements.runagain.txt (line 1))\n#8 4.680   Downloading numpy-1.19.0.zip (7.3 MB)\n#8 6.378      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 7.3/7.3 MB 4.4 MB/s eta 0:00:00\n#8 7.290   Installing build dependencies: started\n#8 19.00   Installing build dependencies: finished with status 'done'\n#8 19.01   Getting requirements to build wheel: started\n#8 19.45   Getting requirements to build wheel: finished with status 'done'\n#8 19.46   Preparing metadata (pyproject.toml): started\n#8 19.74   Preparing metadata (pyproject.toml): finished with status 'error'\n#8 19.74   error: subprocess-exited-with-error\n#8 19.74   \n#8 19.74   \u00d7 Preparing metadata (pyproject.toml) did not run successfully.\n#8 19.74   \u2502 exit code: 1\n#8 19.74   \u2570\u2500> [27 lines of output]\n#8 19.74       Running from numpy source directory.\n#8 19.74       <string>:460: UserWarning: Unrecognized setuptools command, proceeding with generating Cython sources and expanding templates\n#8 19.74       Traceback (most recent call last):\n#8 19.74         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 353, in <module>\n#8 19.74           main()\n#8 19.74         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 335, in main\n#8 19.74           json_out['return_val'] = hook(**hook_input['kwargs'])\n#8 19.74                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n#8 19.74         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 149, in prepare_metadata_for_build_wheel\n#8 19.74           return hook(metadata_directory, config_settings)\n#8 19.74                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n#8 19.74         File \"/tmp/pip-build-env-xhprhu2_/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 380, in prepare_metadata_for_build_wheel\n#8 19.74           self.run_setup()\n#8 19.74         File \"/tmp/pip-build-env-xhprhu2_/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n#8 19.74           super().run_setup(setup_script=setup_script)\n#8 19.74         File \"/tmp/pip-build-env-xhprhu2_/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n#8 19.74           exec(code, locals())  # noqa: S102 # exec is intentional here\n#8 19.74           ^^^^^^^^^^^^^^^^^^^^\n#8 19.74         File \"<string>\", line 489, in <module>\n#8 19.74         File \"<string>\", line 465, in setup_package\n#8 19.74         File \"/tmp/pip-install-401rupzq/numpy_ef574b9cb730448280793097c1e9ad79/numpy/distutils/core.py\", line 24, in <module>\n#8 19.74           from numpy.distutils.command import config, config_compiler, \\\n#8 19.74         File \"/tmp/pip-install-401rupzq/numpy_ef574b9cb730448280793097c1e9ad79/numpy/distutils/command/config.py\", line 19, in <module>\n#8 19.74           from numpy.distutils.mingw32ccompiler import generate_manifest\n#8 19.74         File \"/tmp/pip-install-401rupzq/numpy_ef574b9cb730448280793097c1e9ad79/numpy/distutils/mingw32ccompiler.py\", line 28, in <module>\n#8 19.74           from distutils.msvccompiler import get_build_version as get_build_msvc_version\n#8 19.74       ModuleNotFoundError: No module named 'distutils.msvccompiler'\n#8 19.74       [end of output]\n#8 19.74   \n#8 19.74   note: This error originates from a subprocess, and is likely not a problem with pip.\n#8 19.75 error: metadata-generation-failed\n#8 19.75 \n#8 19.75 \u00d7 Encountered error while generating package metadata.\n#8 19.75 \u2570\u2500> See above for output.\n#8 19.75 \n#8 19.75 note: This is an issue with the package mentioned above, not pip.\n#8 19.75 hint: See above for details.\n#8 19.94 \n#8 19.94 [notice] A new release of pip is available: 24.0 -> 26.2.1\n#8 19.94 [notice] To update, run: pip install --upgrade pip\n#8 ERROR: process \"/bin/sh -c pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\" did not complete successfully: exit code: 1\n------\n > [4/4] RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt:\n19.75 error: metadata-generation-failed\n19.75 \n19.75 \u00d7 Encountered error while generating package metadata.\n19.75 \u2570\u2500> See above for output.\n19.75 \n19.75 note: This is an issue with the package mentioned above, not pip.\n19.75 hint: See above for details.\n19.94 \n19.94 [notice] A new release of pip is available: 24.0 -> 26.2.1\n19.94 [notice] To update, run: pip install --upgrade pip\n------\nDockerfile.runagain:4\n--------------------\n   2 |     WORKDIR /app\n   3 |     COPY . /app\n   4 | >>> RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\n   5 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\" did not complete successfully: exit code: 1\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/tt4lsmkn74etkip21awjxxnoj\n"
+      },
+      "research": [
+        {
+          "title": "Python versions in Debian and Ubuntu official Docker images \u00b7 GitHub",
+          "url": "https://gist.github.com/turicas/aabe80601a69287766cb8a4307e0910e",
+          "content": "| Debian GNU/Linux | 8 | jessie | 2015-04-25 | 2018-06-17 | Python 3.4.2 |\n| Ubuntu | 25.10 | questing | 2025-10-09 | 2026-07-01 | Python 3.13.7 |\n| Ubuntu | 25.04 | plucky | 2025-04-17 | 2026-01-01 | Python 3.13.3 |\n| Ubuntu | 24.10 | oracular | 2024-10-10 | 2025-07-01 | Python 3.12.7 |\n| Ubuntu | 24.04 | noble | 2024-04-25 | 2029-04-01 | Python 3.12.3 |\n| Ubuntu | 23.10 | mantic | 2023-10-12 | 2024-07-11 | Python 3.11.6 |\n| Ubuntu | 23.04 | lunar | 2023-04-20 | 2024-01-25 | Python 3.11.4 | [...] | Ubuntu | 15.10 | wily | 2015-10-22 | 2016-07-28 | Python 3.4.3+ |\n| Ubuntu | 14.04 | trusty | 2014-04-17 | 2019-04-01 | Python 3.4.3 |\n| Fedora Linux | 43  2025-10-28 | 2026-12-09 | Python 3.14.0 |\n| Fedora Linux | 42 | adams | 2025-04-15 | 2026-05-13 | Python 3.13.9 |\n| Fedora Linux | 41  2024"
+        },
+        {
+          "title": "Download Python | Python.org",
+          "url": "https://www.python.org/downloads",
+          "content": "10. Python 3.13.16 Sept. 30, 2026  Download Release notes\n11. Python 3.13.15 Aug. 5, 2026  Download Release notes\n12. Python 3.13.14 June 10, 2026  Download Release notes\n13. Python 3.13.13 April 7, 2026  Download Release notes\n14. Python 3.13.12 Feb. 3, 2026  Download Release notes\n15. Python 3.13.11 Dec. 5, 2025  Download Release notes\n16. Python 3.13.10 Dec. 2, 2025  Download Release notes\n17. Python 3.13.9 Oct. 14, 2025  Download Release notes [...] 61. Python 3.10.22 Oct. 1, 2026  Download Release notes\n62. Python 3.10.21 Aug. 12, 2026  Download Release notes\n63. Python 3.10.20 March 3, 2026  Download Release notes\n64. Python 3.10.19 Oct. 9, 2025  Download Release notes\n65. Python 3.10.18 June 3, 2025  Download Release notes\n66. Python 3.10.17 April 8, 2025  Download Release notes\n67."
+        },
+        {
+          "title": "Python 3.11 - Red Hat Ecosystem Catalog",
+          "url": "https://catalog.redhat.com/software/containers/ubi9/python-311/63f764b03f0b02a2e2d63fff",
+          "content": "We\u2019re the world\u2019s leading provider of enterprise open source solutions\u2014including Linux, cloud, container, and Kubernetes. We deliver hardened solutions that make it easier for enterprises to work across platforms and environments, from the core datacenter to the network edge.\n\n### Red Hat legal and privacy links\n\n About Red Hat\n Jobs\n Events\n Locations\n Contact Red Hat\n Red Hat Blog\n Inclusion at Red Hat\n Cool Stuff Store\n Red Hat Summit\n\n\u00a9 2026 Red Hat, LLC [...] ### Red Hat legal and privacy links\n\n Privacy statement\n Terms of use\n All Policies and guidelines\n Digital accessibility\n\nFeedback\n\nPython 3.11 - Red Hat Ecosystem Catalog\n\nubi9/python-311\n\n# Python 3.11\n\nRed Hat\n\nDeprecated\n\n9.8-17799457151-1779945715\n\nChange version\n\nArchitecture: ppc64le\n\nUpdated\n\nHome\n\nAll container results "
+        },
+        {
+          "title": "python - Official Image | Docker Hub",
+          "url": "https://hub.docker.com/_/python",
+          "content": "`3.13.16-windowsservercore-ltsc2025`, `3.13-windowsservercore-ltsc2025`\u2060\n `3.13.16-windowsservercore-ltsc2022`, `3.13-windowsservercore-ltsc2022`\u2060\n `3.12.15-trixie`, `3.12-trixie`\u2060\n `3.12.15-slim-trixie`, `3.12-slim-trixie`, `3.12.15-slim`, `3.12-slim`\u2060\n `3.12.15-bookworm`, `3.12-bookworm`\u2060\n `3.12.15-slim-bookworm`, `3.12-slim-bookworm`\u2060\n `3.12.15-alpine3.24`, `3.12-alpine3.24`, `3.12.15-alpine`, `3.12-alpine`\u2060\n `3.12.15-alpine3.23`, `3.12-alpine3.23`\u2060\n `3.11.17-trixie`, `3.11-trixie`\u2060 [...] `3.11.17-slim-trixie`, `3.11-slim-trixie`, `3.11.17-slim`, `3.11-slim`\u2060\n `3.11.17-bookworm`, `3.11-bookworm`\u2060\n `3.11.17-slim-bookworm`, `3.11-slim-bookworm`\u2060\n `3.11.17-alpine3.24`, `3.11-alpine3.24`, `3.11.17-alpine`, `3.11-alpine`\u2060\n `3.11.17-alpine3.23`, `3.11-alpine3.23`\u2060 [...] + `3.13.16-windowsserv"
+        },
+        {
+          "title": "Docker build fails in Windows 10, but works in Linux - Docker Desktop - Docker Community Forums",
+          "url": "https://forums.docker.com/t/docker-build-fails-in-windows-10-but-works-in-linux/138346",
+          "content": "`FROM ubuntu:20.04\nENV DEBIAN_FRONTEND=noninteractive\nRUN apt update\nRUN apt install -y gawk wget git-core diffstat unzip texinfo \\\ngcc-multilib build-essential chrpath socat cpio python python3 \\\npython3-pip python3-pexpect xz-utils debianutils iputils-ping \\\nlibsdl1.2-dev xterm tar locales net-tools rsync sudo vim curl zstd \\\nliblz4-tool libssl-dev bc lzop\n# Install repo\nADD  /usr/local/bin/\nRUN chmod 755 /usr/local/bin/repo\nRUN python --version\nRUN python3 --version\nRUN repo --version` [...] > [8/8] RUN repo --version:\n0.489 File \"/usr/local/bin/repo\", line 51\n0.489 def print(self, args, kwargs):\n0.489 ^\n0.489 SyntaxError: invalid syntax\n\nubuntu:16\n\n14 | RUN python --version\n15 | RUN python3 --version\n16 | >>> RUN repo --version\n\nERROR: failed to solve: process \"/bin/sh -c repo --versio"
+        }
+      ],
+      "decision": {
+        "failure_class": "missing_system_library",
+        "root_cause": "The Python 3.11-slim image does not include the distutils module (specifically distutils.msvccompiler) required to build numpy from source. numpy==1.19.0 lacks a binary wheel for Python 3.11, so pip attempts a source build which fails due to the missing distutils component.",
+        "confidence": 0.92,
+        "strategy": "apt_install",
+        "change": {
+          "apt_packages": [
+            "python3-distutils"
+          ]
+        },
+        "verification_command": "pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt && python -c \"import numpy; print('numpy version:', numpy.__version__)\"",
+        "sources_used": [
+          "traceback showing ModuleNotFoundError: No module named 'distutils.msvccompiler'",
+          "knowledge that Debian's python3-distutils package provides the distutils module in slim images"
+        ]
+      }
+    },
+    {
+      "attempt": 2,
+      "state": {
+        "py": "3.11",
+        "apt": [
+          "python3-distutils"
+        ],
+        "pins": {}
+      },
+      "result": {
+        "stage": "build",
+        "exit_code": 1,
+        "log": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.runagain\n#1 transferring dockerfile: 290B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/python:3.11-slim\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.0s\n\n#4 [1/5] FROM docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce\n#4 resolve docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce 0.0s done\n#4 CACHED\n\n#5 [internal] load build context\n#5 transferring context: 2.55kB 0.0s done\n#5 DONE 0.0s\n\n#6 [2/5] RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\n#6 0.657 Hit:1 http://deb.debian.org/debian trixie InRelease\n#6 0.668 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]\n#6 0.762 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]\n#6 0.803 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]\n#6 2.956 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [4412 B]\n#6 2.986 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n#6 3.893 Fetched 10.0 MB in 3s (2873 kB/s)\n#6 3.893 Reading package lists...\n#6 4.648 Reading package lists...\n#6 5.405 Building dependency tree...\n#6 5.614 Reading state information...\n#6 5.643 Package python3-distutils is not available, but is referred to by another package.\n#6 5.643 This may mean that the package is missing, has been obsoleted, or\n#6 5.643 is only available from another source\n#6 5.643 \n#6 5.649 E: Package 'python3-distutils' has no installation candidate\n#6 ERROR: process \"/bin/sh -c apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n------\n > [2/5] RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*:\n2.986 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n\n\n\n5.614 Reading state information...\n5.643 Package python3-distutils is not available, but is referred to by another package.\n5.643 This may mean that the package is missing, has been obsoleted, or\n5.643 is only available from another source\n5.643 \n5.649 E: Package 'python3-distutils' has no installation candidate\n------\nDockerfile.runagain:2\n--------------------\n   1 |     FROM python:3.11-slim\n   2 | >>> RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\n   3 |     WORKDIR /app\n   4 |     COPY . /app\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/ux8ff6igj0ssiohkzjltsvluj\n"
+      },
+      "research": [
+        {
+          "title": "Python versions in Debian and Ubuntu official Docker images \u00b7 GitHub",
+          "url": "https://gist.github.com/turicas/aabe80601a69287766cb8a4307e0910e",
+          "content": "| Debian GNU/Linux | 8 | jessie | 2015-04-25 | 2018-06-17 | Python 3.4.2 |\n| Ubuntu | 25.10 | questing | 2025-10-09 | 2026-07-01 | Python 3.13.7 |\n| Ubuntu | 25.04 | plucky | 2025-04-17 | 2026-01-01 | Python 3.13.3 |\n| Ubuntu | 24.10 | oracular | 2024-10-10 | 2025-07-01 | Python 3.12.7 |\n| Ubuntu | 24.04 | noble | 2024-04-25 | 2029-04-01 | Python 3.12.3 |\n| Ubuntu | 23.10 | mantic | 2023-10-12 | 2024-07-11 | Python 3.11.6 |\n| Ubuntu | 23.04 | lunar | 2023-04-20 | 2024-01-25 | Python 3.11.4 | [...] | Ubuntu | 15.10 | wily | 2015-10-22 | 2016-07-28 | Python 3.4.3+ |\n| Ubuntu | 14.04 | trusty | 2014-04-17 | 2019-04-01 | Python 3.4.3 |\n| Fedora Linux | 43  2025-10-28 | 2026-12-09 | Python 3.14.0 |\n| Fedora Linux | 42 | adams | 2025-04-15 | 2026-05-13 | Python 3.13.9 |\n| Fedora Linux | 41  2024"
+        },
+        {
+          "title": "Explore the Builds view in Docker Desktop | Docker Docs",
+          "url": "https://docs.docker.com/desktop/use-desktop/builds",
+          "content": "The build summary for the `docker/build-push-action` and `docker/bake-action` GitHub Actions includes a link to download the build records, for inspecting CI jobs with Docker Desktop.\n\n## Inspect builds\n\nTo inspect a build, select the build that you want to view in the list. The inspection view contains a number of tabs.\n\nThe Info tab displays details about the build. [...] Table of contents\n\nThe Builds view provides an interactive interface for inspecting build history, monitoring active builds, and managing builders directly in Docker Desktop.\n\nBy default, the Build history tab displays a list of completed builds, sorted by date (newest first). Switch to the Active builds tab to view ongoing builds. [...] | Build operation | Description |\n --- |\n| Local file transfers | Time spent transf"
+        },
+        {
+          "title": "Download Python | Python.org",
+          "url": "https://www.python.org/downloads",
+          "content": "10. Python 3.13.16 Sept. 30, 2026  Download Release notes\n11. Python 3.13.15 Aug. 5, 2026  Download Release notes\n12. Python 3.13.14 June 10, 2026  Download Release notes\n13. Python 3.13.13 April 7, 2026  Download Release notes\n14. Python 3.13.12 Feb. 3, 2026  Download Release notes\n15. Python 3.13.11 Dec. 5, 2025  Download Release notes\n16. Python 3.13.10 Dec. 2, 2025  Download Release notes\n17. Python 3.13.9 Oct. 14, 2025  Download Release notes [...] 61. Python 3.10.22 Oct. 1, 2026  Download Release notes\n62. Python 3.10.21 Aug. 12, 2026  Download Release notes\n63. Python 3.10.20 March 3, 2026  Download Release notes\n64. Python 3.10.19 Oct. 9, 2025  Download Release notes\n65. Python 3.10.18 June 3, 2025  Download Release notes\n66. Python 3.10.17 April 8, 2025  Download Release notes\n67."
+        },
+        {
+          "title": "Python 3.11 - Red Hat Ecosystem Catalog",
+          "url": "https://catalog.redhat.com/software/containers/ubi9/python-311/63f764b03f0b02a2e2d63fff",
+          "content": "We\u2019re the world\u2019s leading provider of enterprise open source solutions\u2014including Linux, cloud, container, and Kubernetes. We deliver hardened solutions that make it easier for enterprises to work across platforms and environments, from the core datacenter to the network edge.\n\n### Red Hat legal and privacy links\n\n About Red Hat\n Jobs\n Events\n Locations\n Contact Red Hat\n Red Hat Blog\n Inclusion at Red Hat\n Cool Stuff Store\n Red Hat Summit\n\n\u00a9 2026 Red Hat, LLC [...] ### Red Hat legal and privacy links\n\n Privacy statement\n Terms of use\n All Policies and guidelines\n Digital accessibility\n\nFeedback\n\nPython 3.11 - Red Hat Ecosystem Catalog\n\nubi9/python-311\n\n# Python 3.11\n\nRed Hat\n\nDeprecated\n\n9.8-17799457151-1779945715\n\nChange version\n\nArchitecture: ppc64le\n\nUpdated\n\nHome\n\nAll container results"
+        },
+        {
+          "title": "python - Official Image | Docker Hub",
+          "url": "https://hub.docker.com/_/python",
+          "content": "`3.13.16-windowsservercore-ltsc2025`, `3.13-windowsservercore-ltsc2025`\u2060\n `3.13.16-windowsservercore-ltsc2022`, `3.13-windowsservercore-ltsc2022`\u2060\n `3.12.15-trixie`, `3.12-trixie`\u2060\n `3.12.15-slim-trixie`, `3.12-slim-trixie`, `3.12.15-slim`, `3.12-slim`\u2060\n `3.12.15-bookworm`, `3.12-bookworm`\u2060\n `3.12.15-slim-bookworm`, `3.12-slim-bookworm`\u2060\n `3.12.15-alpine3.24`, `3.12-alpine3.24`, `3.12.15-alpine`, `3.12-alpine`\u2060\n `3.12.15-alpine3.23`, `3.12-alpine3.23`\u2060\n `3.11.17-trixie`, `3.11-trixie`\u2060 [...] `3.11.17-slim-trixie`, `3.11-slim-trixie`, `3.11.17-slim`, `3.11-slim`\u2060\n `3.11.17-bookworm`, `3.11-bookworm`\u2060\n `3.11.17-slim-bookworm`, `3.11-slim-bookworm`\u2060\n `3.11.17-alpine3.24`, `3.11-alpine3.24`, `3.11.17-alpine`, `3.11-alpine`\u2060\n `3.11.17-alpine3.23`, `3.11-alpine3.23`\u2060 [...] + `3.13.16-windowsserv"
+        }
+      ],
+      "decision": {
+        "failure_class": "missing_system_library",
+        "root_cause": "The package python3-distutils has been removed from Debian trixie repositories; it is obsolete as distutils is now part of the Python 3.11 standard library.",
+        "confidence": 0.9,
+        "strategy": "compat_patch",
+        "change": {
+          "patch": "FROM python:3.11-slim\\nRUN apt-get update && apt-get install -y --no-install-recommends && rm -rf /var/lib/apt/lists/*\\nWORKDIR /app\\nCOPY . /app"
+        },
+        "verification_command": "docker build -f Dockerfile.runagain .",
+        "sources_used": []
+      }
+    },
+    {
+      "attempt": 3,
+      "state": {
+        "py": "3.11",
+        "apt": [
+          "python3-distutils"
+        ],
+        "pins": {}
+      },
+      "result": {
+        "stage": "build",
+        "exit_code": 1,
+        "log": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.runagain\n#1 transferring dockerfile: 290B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/python:3.11-slim\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.0s\n\n#4 [1/5] FROM docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce\n#4 resolve docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce 0.0s done\n#4 CACHED\n\n#5 [internal] load build context\n#5 transferring context: 2.55kB 0.0s done\n#5 DONE 0.0s\n\n#6 [2/5] RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\n#6 0.674 Hit:1 http://deb.debian.org/debian trixie InRelease\n#6 0.759 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]\n#6 0.806 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]\n#6 0.883 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]\n#6 5.655 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [4412 B]\n#6 5.677 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n#6 6.634 Fetched 10.0 MB in 6s (1632 kB/s)\n#6 6.634 Reading package lists...\n#6 7.474 Reading package lists...\n#6 8.251 Building dependency tree...\n#6 8.434 Reading state information...\n#6 8.460 Package python3-distutils is not available, but is referred to by another package.\n#6 8.460 This may mean that the package is missing, has been obsoleted, or\n#6 8.460 is only available from another source\n#6 8.460 \n#6 8.466 E: Package 'python3-distutils' has no installation candidate\n#6 ERROR: process \"/bin/sh -c apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n------\n > [2/5] RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*:\n5.677 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n\n\n\n8.434 Reading state information...\n8.460 Package python3-distutils is not available, but is referred to by another package.\n8.460 This may mean that the package is missing, has been obsoleted, or\n8.460 is only available from another source\n8.460 \n8.466 E: Package 'python3-distutils' has no installation candidate\n------\nDockerfile.runagain:2\n--------------------\n   1 |     FROM python:3.11-slim\n   2 | >>> RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\n   3 |     WORKDIR /app\n   4 |     COPY . /app\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/i2a4v8romrd6ip53njrdu5em3\n"
+      },
+      "research": [
+        {
+          "title": "Python versions in Debian and Ubuntu official Docker images \u00b7 GitHub",
+          "url": "https://gist.github.com/turicas/aabe80601a69287766cb8a4307e0910e",
+          "content": "| Debian GNU/Linux | 8 | jessie | 2015-04-25 | 2018-06-17 | Python 3.4.2 |\n| Ubuntu | 25.10 | questing | 2025-10-09 | 2026-07-01 | Python 3.13.7 |\n| Ubuntu | 25.04 | plucky | 2025-04-17 | 2026-01-01 | Python 3.13.3 |\n| Ubuntu | 24.10 | oracular | 2024-10-10 | 2025-07-01 | Python 3.12.7 |\n| Ubuntu | 24.04 | noble | 2024-04-25 | 2029-04-01 | Python 3.12.3 |\n| Ubuntu | 23.10 | mantic | 2023-10-12 | 2024-07-11 | Python 3.11.6 |\n| Ubuntu | 23.04 | lunar | 2023-04-20 | 2024-01-25 | Python 3.11.4 | [...] | Ubuntu | 15.10 | wily | 2015-10-22 | 2016-07-28 | Python 3.4.3+ |\n| Ubuntu | 14.04 | trusty | 2014-04-17 | 2019-04-01 | Python 3.4.3 |\n| Fedora Linux | 43  2025-10-28 | 2026-12-09 | Python 3.14.0 |\n| Fedora Linux | 42 | adams | 2025-04-15 | 2026-05-13 | Python 3.13.9 |\n| Fedora Linux | 41  2024"
+        },
+        {
+          "title": "Explore the Builds view in Docker Desktop | Docker Docs",
+          "url": "https://docs.docker.com/desktop/use-desktop/builds",
+          "content": "The build summary for the `docker/build-push-action` and `docker/bake-action` GitHub Actions includes a link to download the build records, for inspecting CI jobs with Docker Desktop.\n\n## Inspect builds\n\nTo inspect a build, select the build that you want to view in the list. The inspection view contains a number of tabs.\n\nThe Info tab displays details about the build. [...] Table of contents\n\nThe Builds view provides an interactive interface for inspecting build history, monitoring active builds, and managing builders directly in Docker Desktop.\n\nBy default, the Build history tab displays a list of completed builds, sorted by date (newest first). Switch to the Active builds tab to view ongoing builds. [...] | Build operation | Description |\n --- |\n| Local file transfers | Time spent transf"
+        },
+        {
+          "title": "Download Python | Python.org",
+          "url": "https://www.python.org/downloads",
+          "content": "10. Python 3.13.16 Sept. 30, 2026  Download Release notes\n11. Python 3.13.15 Aug. 5, 2026  Download Release notes\n12. Python 3.13.14 June 10, 2026  Download Release notes\n13. Python 3.13.13 April 7, 2026  Download Release notes\n14. Python 3.13.12 Feb. 3, 2026  Download Release notes\n15. Python 3.13.11 Dec. 5, 2025  Download Release notes\n16. Python 3.13.10 Dec. 2, 2025  Download Release notes\n17. Python 3.13.9 Oct. 14, 2025  Download Release notes [...] 61. Python 3.10.22 Oct. 1, 2026  Download Release notes\n62. Python 3.10.21 Aug. 12, 2026  Download Release notes\n63. Python 3.10.20 March 3, 2026  Download Release notes\n64. Python 3.10.19 Oct. 9, 2025  Download Release notes\n65. Python 3.10.18 June 3, 2025  Download Release notes\n66. Python 3.10.17 April 8, 2025  Download Release notes\n67."
+        },
+        {
+          "title": "Python 3.11 - Red Hat Ecosystem Catalog",
+          "url": "https://catalog.redhat.com/software/containers/ubi9/python-311/63f764b03f0b02a2e2d63fff",
+          "content": "We\u2019re the world\u2019s leading provider of enterprise open source solutions\u2014including Linux, cloud, container, and Kubernetes. We deliver hardened solutions that make it easier for enterprises to work across platforms and environments, from the core datacenter to the network edge.\n\n### Red Hat legal and privacy links\n\n About Red Hat\n Jobs\n Events\n Locations\n Contact Red Hat\n Red Hat Blog\n Inclusion at Red Hat\n Cool Stuff Store\n Red Hat Summit\n\n\u00a9 2026 Red Hat, LLC [...] ### Red Hat legal and privacy links\n\n Privacy statement\n Terms of use\n All Policies and guidelines\n Digital accessibility\n\nFeedback\n\nPython 3.11 - Red Hat Ecosystem Catalog\n\nubi9/python-311\n\n# Python 3.11\n\nRed Hat\n\nDeprecated\n\n9.8-17799457151-1779945715\n\nChange version\n\nArchitecture: ppc64le\n\nUpdated\n\nHome\n\nAll container results"
+        },
+        {
+          "title": "python - Official Image | Docker Hub",
+          "url": "https://hub.docker.com/_/python",
+          "content": "`3.13.16-windowsservercore-ltsc2025`, `3.13-windowsservercore-ltsc2025`\u2060\n `3.13.16-windowsservercore-ltsc2022`, `3.13-windowsservercore-ltsc2022`\u2060\n `3.12.15-trixie`, `3.12-trixie`\u2060\n `3.12.15-slim-trixie`, `3.12-slim-trixie`, `3.12.15-slim`, `3.12-slim`\u2060\n `3.12.15-bookworm`, `3.12-bookworm`\u2060\n `3.12.15-slim-bookworm`, `3.12-slim-bookworm`\u2060\n `3.12.15-alpine3.24`, `3.12-alpine3.24`, `3.12.15-alpine`, `3.12-alpine`\u2060\n `3.12.15-alpine3.23`, `3.12-alpine3.23`\u2060\n `3.11.17-trixie`, `3.11-trixie`\u2060 [...] `3.11.17-slim-trixie`, `3.11-slim-trixie`, `3.11.17-slim`, `3.11-slim`\u2060\n `3.11.17-bookworm`, `3.11-bookworm`\u2060\n `3.11.17-slim-bookworm`, `3.11-slim-bookworm`\u2060\n `3.11.17-alpine3.24`, `3.11-alpine3.24`, `3.11.17-alpine`, `3.11-alpine`\u2060\n `3.11.17-alpine3.23`, `3.11-alpine3.23`\u2060 [...] + `3.13.16-windowsserv"
+        }
+      ],
+      "decision": {
+        "failure_class": "missing_system_library",
+        "root_cause": "The package python3-distutils is not available in Debian trixie (testing) because distutils is now included in the base python3 package.",
+        "confidence": 0.95,
+        "strategy": "compat_patch",
+        "change": {
+          "patch": "FROM python:3.11-slim\nRUN apt-get update && rm -rf /var/lib/apt/lists/*\nWORKDIR /app\nCOPY . /app\n"
+        },
+        "verification_command": "python -c \"import distutils\"",
+        "sources_used": [
+          "https://gist.github.com/turicas/aabe80601a69287766cb8a4307e0910e"
+        ]
+      }
+    },
+    {
+      "attempt": 4,
+      "state": {
+        "py": "3.11",
+        "apt": [
+          "python3-distutils"
+        ],
+        "pins": {}
+      },
+      "result": {
+        "stage": "build",
+        "exit_code": 1,
+        "log": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.runagain\n#1 transferring dockerfile: 290B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/python:3.11-slim\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.0s\n\n#4 [internal] load build context\n#4 DONE 0.0s\n\n#5 [1/5] FROM docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce\n#5 resolve docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce\n#5 resolve docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce 0.0s done\n#5 CACHED\n\n#4 [internal] load build context\n#4 transferring context: 2.55kB 0.0s done\n#4 DONE 0.0s\n\n#6 [2/5] RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\n#6 0.495 Hit:1 http://deb.debian.org/debian trixie InRelease\n#6 0.497 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]\n#6 0.544 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]\n#6 0.633 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]\n#6 3.421 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [4412 B]\n#6 3.473 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n#6 4.495 Fetched 10.0 MB in 4s (2417 kB/s)\n#6 4.495 Reading package lists...\n#6 6.145 Reading package lists...\n#6 7.437 Building dependency tree...\n#6 7.698 Reading state information...\n#6 7.741 Package python3-distutils is not available, but is referred to by another package.\n#6 7.741 This may mean that the package is missing, has been obsoleted, or\n#6 7.741 is only available from another source\n#6 7.741 \n#6 7.749 E: Package 'python3-distutils' has no installation candidate\n#6 ERROR: process \"/bin/sh -c apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n------\n > [2/5] RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*:\n3.473 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n\n\n\n7.698 Reading state information...\n7.741 Package python3-distutils is not available, but is referred to by another package.\n7.741 This may mean that the package is missing, has been obsoleted, or\n7.741 is only available from another source\n7.741 \n7.749 E: Package 'python3-distutils' has no installation candidate\n------\nDockerfile.runagain:2\n--------------------\n   1 |     FROM python:3.11-slim\n   2 | >>> RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\n   3 |     WORKDIR /app\n   4 |     COPY . /app\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/y73dk2cz4zs68x8nh8vw0423x\n"
+      },
+      "research": [
+        {
+          "title": "Python versions in Debian and Ubuntu official Docker images \u00b7 GitHub",
+          "url": "https://gist.github.com/turicas/aabe80601a69287766cb8a4307e0910e",
+          "content": "| Debian GNU/Linux | 8 | jessie | 2015-04-25 | 2018-06-17 | Python 3.4.2 |\n| Ubuntu | 25.10 | questing | 2025-10-09 | 2026-07-01 | Python 3.13.7 |\n| Ubuntu | 25.04 | plucky | 2025-04-17 | 2026-01-01 | Python 3.13.3 |\n| Ubuntu | 24.10 | oracular | 2024-10-10 | 2025-07-01 | Python 3.12.7 |\n| Ubuntu | 24.04 | noble | 2024-04-25 | 2029-04-01 | Python 3.12.3 |\n| Ubuntu | 23.10 | mantic | 2023-10-12 | 2024-07-11 | Python 3.11.6 |\n| Ubuntu | 23.04 | lunar | 2023-04-20 | 2024-01-25 | Python 3.11.4 | [...] | Ubuntu | 15.10 | wily | 2015-10-22 | 2016-07-28 | Python 3.4.3+ |\n| Ubuntu | 14.04 | trusty | 2014-04-17 | 2019-04-01 | Python 3.4.3 |\n| Fedora Linux | 43  2025-10-28 | 2026-12-09 | Python 3.14.0 |\n| Fedora Linux | 42 | adams | 2025-04-15 | 2026-05-13 | Python 3.13.9 |\n| Fedora Linux | 41  2024"
+        },
+        {
+          "title": "Download Python | Python.org",
+          "url": "https://www.python.org/downloads",
+          "content": "10. Python 3.13.16 Sept. 30, 2026  Download Release notes\n11. Python 3.13.15 Aug. 5, 2026  Download Release notes\n12. Python 3.13.14 June 10, 2026  Download Release notes\n13. Python 3.13.13 April 7, 2026  Download Release notes\n14. Python 3.13.12 Feb. 3, 2026  Download Release notes\n15. Python 3.13.11 Dec. 5, 2025  Download Release notes\n16. Python 3.13.10 Dec. 2, 2025  Download Release notes\n17. Python 3.13.9 Oct. 14, 2025  Download Release notes [...] 61. Python 3.10.22 Oct. 1, 2026  Download Release notes\n62. Python 3.10.21 Aug. 12, 2026  Download Release notes\n63. Python 3.10.20 March 3, 2026  Download Release notes\n64. Python 3.10.19 Oct. 9, 2025  Download Release notes\n65. Python 3.10.18 June 3, 2025  Download Release notes\n66. Python 3.10.17 April 8, 2025  Download Release notes\n67."
+        },
+        {
+          "title": "Python 3.11 - Red Hat Ecosystem Catalog",
+          "url": "https://catalog.redhat.com/software/containers/ubi9/python-311/63f764b03f0b02a2e2d63fff",
+          "content": "We\u2019re the world\u2019s leading provider of enterprise open source solutions\u2014including Linux, cloud, container, and Kubernetes. We deliver hardened solutions that make it easier for enterprises to work across platforms and environments, from the core datacenter to the network edge.\n\n### Red Hat legal and privacy links\n\n About Red Hat\n Jobs\n Events\n Locations\n Contact Red Hat\n Red Hat Blog\n Inclusion at Red Hat\n Cool Stuff Store\n Red Hat Summit\n\n\u00a9 2026 Red Hat, LLC [...] ### Red Hat legal and privacy links\n\n Privacy statement\n Terms of use\n All Policies and guidelines\n Digital accessibility\n\nFeedback\n\nPython 3.11 - Red Hat Ecosystem Catalog\n\nubi9/python-311\n\n# Python 3.11\n\nRed Hat\n\nDeprecated\n\n9.8-17799457151-1779945715\n\nChange version\n\nArchitecture: ppc64le\n\nUpdated\n\nHome\n\nAll container results "
+        },
+        {
+          "title": "python - Official Image | Docker Hub",
+          "url": "https://hub.docker.com/_/python",
+          "content": "`3.13.16-windowsservercore-ltsc2025`, `3.13-windowsservercore-ltsc2025`\u2060\n `3.13.16-windowsservercore-ltsc2022`, `3.13-windowsservercore-ltsc2022`\u2060\n `3.12.15-trixie`, `3.12-trixie`\u2060\n `3.12.15-slim-trixie`, `3.12-slim-trixie`, `3.12.15-slim`, `3.12-slim`\u2060\n `3.12.15-bookworm`, `3.12-bookworm`\u2060\n `3.12.15-slim-bookworm`, `3.12-slim-bookworm`\u2060\n `3.12.15-alpine3.24`, `3.12-alpine3.24`, `3.12.15-alpine`, `3.12-alpine`\u2060\n `3.12.15-alpine3.23`, `3.12-alpine3.23`\u2060\n `3.11.17-trixie`, `3.11-trixie`\u2060 [...] `3.11.17-slim-trixie`, `3.11-slim-trixie`, `3.11.17-slim`, `3.11-slim`\u2060\n `3.11.17-bookworm`, `3.11-bookworm`\u2060\n `3.11.17-slim-bookworm`, `3.11-slim-bookworm`\u2060\n `3.11.17-alpine3.24`, `3.11-alpine3.24`, `3.11.17-alpine`, `3.11-alpine`\u2060\n `3.11.17-alpine3.23`, `3.11-alpine3.23`\u2060 [...] + `3.13.16-windowsserv"
+        },
+        {
+          "title": "Docker build fails in Windows 10, but works in Linux - Docker Desktop - Docker Community Forums",
+          "url": "https://forums.docker.com/t/docker-build-fails-in-windows-10-but-works-in-linux/138346",
+          "content": "`FROM ubuntu:20.04\nENV DEBIAN_FRONTEND=noninteractive\nRUN apt update\nRUN apt install -y gawk wget git-core diffstat unzip texinfo \\\ngcc-multilib build-essential chrpath socat cpio python python3 \\\npython3-pip python3-pexpect xz-utils debianutils iputils-ping \\\nlibsdl1.2-dev xterm tar locales net-tools rsync sudo vim curl zstd \\\nliblz4-tool libssl-dev bc lzop\n# Install repo\nADD  /usr/local/bin/\nRUN chmod 755 /usr/local/bin/repo\nRUN python --version\nRUN python3 --version\nRUN repo --version` [...] | Topic |  | Replies | Views | Activity |\n ---  --- \n| Unable to build the docker image Using docker desktop  General | 1 | 397 | August 13, 2023 |\n| Docker : exec /usr/local/bin/python: input/output error  General docker | 4 | 1342 | May 13, 2024 |\n| Docker build problem in Python  Docker Hub build"
+        }
+      ],
+      "decision": {
+        "failure_class": "missing_system_library",
+        "root_cause": "The package python3-distutils is not available in Debian trixie (testing) repositories; it has been merged into the base python3 package.",
+        "confidence": 0.95,
+        "strategy": "compat_patch",
+        "change": {
+          "patch": "FROM python:3.11-slim\nWORKDIR /app\nCOPY . /app\nRUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt"
+        },
+        "verification_command": "python -c \"import distutils; print('distutils available')\"",
+        "sources_used": []
+      }
+    },
+    {
+      "attempt": 5,
+      "state": {
+        "py": "3.11",
+        "apt": [
+          "python3-distutils"
+        ],
+        "pins": {}
+      },
+      "result": {
+        "stage": "build",
+        "exit_code": 1,
+        "log": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile.runagain\n#1 transferring dockerfile: 290B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/python:3.11-slim\n#2 DONE 0.1s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.0s\n\n#4 [internal] load build context\n#4 DONE 0.0s\n\n#5 [1/5] FROM docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce\n#5 resolve docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce 0.1s done\n#5 CACHED\n\n#4 [internal] load build context\n#4 transferring context: 2.55kB 0.0s done\n#4 DONE 0.1s\n\n#6 [2/5] RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\n#6 0.515 Hit:1 http://deb.debian.org/debian trixie InRelease\n#6 0.527 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]\n#6 0.707 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]\n#6 0.759 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]\n#6 4.181 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [4412 B]\n#6 4.199 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n#6 5.215 Fetched 10.0 MB in 5s (2093 kB/s)\n#6 5.215 Reading package lists...\n#6 6.464 Reading package lists...\n#6 7.827 Building dependency tree...\n#6 8.151 Reading state information...\n#6 8.201 Package python3-distutils is not available, but is referred to by another package.\n#6 8.201 This may mean that the package is missing, has been obsoleted, or\n#6 8.201 is only available from another source\n#6 8.201 \n#6 8.213 E: Package 'python3-distutils' has no installation candidate\n#6 ERROR: process \"/bin/sh -c apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n------\n > [2/5] RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*:\n4.181 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [4412 B]\n4.199 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [269 kB]\n\n\n\n8.201 Package python3-distutils is not available, but is referred to by another package.\n8.201 This may mean that the package is missing, has been obsoleted, or\n8.201 is only available from another source\n8.201 \n8.213 E: Package 'python3-distutils' has no installation candidate\n------\nDockerfile.runagain:2\n--------------------\n   1 |     FROM python:3.11-slim\n   2 | >>> RUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\n   3 |     WORKDIR /app\n   4 |     COPY . /app\n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\" did not complete successfully: exit code: 100\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/lwh6tc656wj25ymqoujvdwhbf\n"
+      },
+      "research": [
+        {
+          "title": "Python versions in Debian and Ubuntu official Docker images \u00b7 GitHub",
+          "url": "https://gist.github.com/turicas/aabe80601a69287766cb8a4307e0910e",
+          "content": "| Debian GNU/Linux | 8 | jessie | 2015-04-25 | 2018-06-17 | Python 3.4.2 |\n| Ubuntu | 25.10 | questing | 2025-10-09 | 2026-07-01 | Python 3.13.7 |\n| Ubuntu | 25.04 | plucky | 2025-04-17 | 2026-01-01 | Python 3.13.3 |\n| Ubuntu | 24.10 | oracular | 2024-10-10 | 2025-07-01 | Python 3.12.7 |\n| Ubuntu | 24.04 | noble | 2024-04-25 | 2029-04-01 | Python 3.12.3 |\n| Ubuntu | 23.10 | mantic | 2023-10-12 | 2024-07-11 | Python 3.11.6 |\n| Ubuntu | 23.04 | lunar | 2023-04-20 | 2024-01-25 | Python 3.11.4 | [...] | Ubuntu | 15.10 | wily | 2015-10-22 | 2016-07-28 | Python 3.4.3+ |\n| Ubuntu | 14.04 | trusty | 2014-04-17 | 2019-04-01 | Python 3.4.3 |\n| Fedora Linux | 43  2025-10-28 | 2026-12-09 | Python 3.14.0 |\n| Fedora Linux | 42 | adams | 2025-04-15 | 2026-05-13 | Python 3.13.9 |\n| Fedora Linux | 41  2024"
+        },
+        {
+          "title": "Download Python | Python.org",
+          "url": "https://www.python.org/downloads",
+          "content": "10. Python 3.13.16 Sept. 30, 2026  Download Release notes\n11. Python 3.13.15 Aug. 5, 2026  Download Release notes\n12. Python 3.13.14 June 10, 2026  Download Release notes\n13. Python 3.13.13 April 7, 2026  Download Release notes\n14. Python 3.13.12 Feb. 3, 2026  Download Release notes\n15. Python 3.13.11 Dec. 5, 2025  Download Release notes\n16. Python 3.13.10 Dec. 2, 2025  Download Release notes\n17. Python 3.13.9 Oct. 14, 2025  Download Release notes [...] 61. Python 3.10.22 Oct. 1, 2026  Download Release notes\n62. Python 3.10.21 Aug. 12, 2026  Download Release notes\n63. Python 3.10.20 March 3, 2026  Download Release notes\n64. Python 3.10.19 Oct. 9, 2025  Download Release notes\n65. Python 3.10.18 June 3, 2025  Download Release notes\n66. Python 3.10.17 April 8, 2025  Download Release notes\n67."
+        },
+        {
+          "title": "Python 3.11 - Red Hat Ecosystem Catalog",
+          "url": "https://catalog.redhat.com/software/containers/ubi9/python-311/63f764b03f0b02a2e2d63fff",
+          "content": "We\u2019re the world\u2019s leading provider of enterprise open source solutions\u2014including Linux, cloud, container, and Kubernetes. We deliver hardened solutions that make it easier for enterprises to work across platforms and environments, from the core datacenter to the network edge.\n\n### Red Hat legal and privacy links\n\n About Red Hat\n Jobs\n Events\n Locations\n Contact Red Hat\n Red Hat Blog\n Inclusion at Red Hat\n Cool Stuff Store\n Red Hat Summit\n\n\u00a9 2026 Red Hat, LLC [...] ### Red Hat legal and privacy links\n\n Privacy statement\n Terms of use\n All Policies and guidelines\n Digital accessibility\n\nFeedback\n\nPython 3.11 - Red Hat Ecosystem Catalog\n\nubi9/python-311\n\n# Python 3.11\n\nRed Hat\n\nDeprecated\n\n9.8-17799457151-1779945715\n\nChange version\n\nArchitecture: ppc64le\n\nUpdated\n\nHome\n\nAll container results "
+        },
+        {
+          "title": "python - Official Image | Docker Hub",
+          "url": "https://hub.docker.com/_/python",
+          "content": "`3.13.16-windowsservercore-ltsc2025`, `3.13-windowsservercore-ltsc2025`\u2060\n `3.13.16-windowsservercore-ltsc2022`, `3.13-windowsservercore-ltsc2022`\u2060\n `3.12.15-trixie`, `3.12-trixie`\u2060\n `3.12.15-slim-trixie`, `3.12-slim-trixie`, `3.12.15-slim`, `3.12-slim`\u2060\n `3.12.15-bookworm`, `3.12-bookworm`\u2060\n `3.12.15-slim-bookworm`, `3.12-slim-bookworm`\u2060\n `3.12.15-alpine3.24`, `3.12-alpine3.24`, `3.12.15-alpine`, `3.12-alpine`\u2060\n `3.12.15-alpine3.23`, `3.12-alpine3.23`\u2060\n `3.11.17-trixie`, `3.11-trixie`\u2060 [...] `3.11.17-slim-trixie`, `3.11-slim-trixie`, `3.11.17-slim`, `3.11-slim`\u2060\n `3.11.17-bookworm`, `3.11-bookworm`\u2060\n `3.11.17-slim-bookworm`, `3.11-slim-bookworm`\u2060\n `3.11.17-alpine3.24`, `3.11-alpine3.24`, `3.11.17-alpine`, `3.11-alpine`\u2060\n `3.11.17-alpine3.23`, `3.11-alpine3.23`\u2060 [...] + `3.13.16-windowsserv"
+        },
+        {
+          "title": "Docker build fails in Windows 10, but works in Linux - Docker Desktop - Docker Community Forums",
+          "url": "https://forums.docker.com/t/docker-build-fails-in-windows-10-but-works-in-linux/138346",
+          "content": "`FROM ubuntu:20.04\nENV DEBIAN_FRONTEND=noninteractive\nRUN apt update\nRUN apt install -y gawk wget git-core diffstat unzip texinfo \\\ngcc-multilib build-essential chrpath socat cpio python python3 \\\npython3-pip python3-pexpect xz-utils debianutils iputils-ping \\\nlibsdl1.2-dev xterm tar locales net-tools rsync sudo vim curl zstd \\\nliblz4-tool libssl-dev bc lzop\n# Install repo\nADD  /usr/local/bin/\nRUN chmod 755 /usr/local/bin/repo\nRUN python --version\nRUN python3 --version\nRUN repo --version` [...] > [8/8] RUN repo --version:\n0.489 File \"/usr/local/bin/repo\", line 51\n0.489 def print(self, args, kwargs):\n0.489 ^\n0.489 SyntaxError: invalid syntax\n\nubuntu:16\n\n14 | RUN python --version\n15 | RUN python3 --version\n16 | >>> RUN repo --version\n\nERROR: failed to solve: process \"/bin/sh -c repo --versio"
+        }
+      ],
+      "decision": {
+        "failure_class": "missing_system_library",
+        "root_cause": "The package python3-distutils is not available in Debian trixie (Debian 13) repositories, likely because it was removed or transitioned; the Python 3.11 slim image already includes distutils in the standard library.",
+        "confidence": 0.95,
+        "strategy": "apt_install",
+        "change": {
+          "apt_packages": []
+        },
+        "verification_command": "python -c \"import distutils; print('distutils ok')\"",
+        "sources_used": []
+      }
+    }
+  ],
+  "dockerfile": "FROM python:3.11-slim\nRUN apt-get update && apt-get install -y --no-install-recommends python3-distutils && rm -rf /var/lib/apt/lists/*\nWORKDIR /app\nCOPY . /app\nRUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\n"
+}

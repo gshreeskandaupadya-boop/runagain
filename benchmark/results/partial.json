@@ -1,0 +1,63 @@
+[
+  {
+    "attempt": 1,
+    "state": {
+      "py": "3.11",
+      "apt": [],
+      "pins": {},
+      "patches": []
+    },
+    "result": {
+      "stage": "build",
+      "exit_code": 1,
+      "log": "#0 building with \"desktop-linux\" instance using docker-container driver\n\n#1 [internal] load build definition from Dockerfile.runagain\n#1 transferring dockerfile: 173B 0.0s done\n#1 DONE 0.1s\n\n#2 [internal] load metadata for docker.io/library/python:3.11-slim\n#2 DONE 0.2s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.1s\n\n#4 [1/4] FROM docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce\n#4 resolve docker.io/library/python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce 0.1s done\n#4 DONE 0.1s\n\n#5 [internal] load build context\n#5 transferring context: 31.64kB 0.2s done\n#5 DONE 0.3s\n\n#6 [2/4] WORKDIR /app\n#6 CACHED\n\n#7 [3/4] COPY . /app\n#7 DONE 0.2s\n\n#8 [4/4] RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\n#8 19.30 Collecting numpy==1.19.0 (from -r requirements.runagain.txt (line 1))\n#8 19.81   Downloading numpy-1.19.0.zip (7.3 MB)\n#8 44.82      \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 7.3/7.3 MB 291.6 kB/s eta 0:00:00\n#8 47.97   Installing build dependencies: started\n#8 70.07   Installing build dependencies: finished with status 'done'\n#8 70.24   Getting requirements to build wheel: started\n#8 71.82   Getting requirements to build wheel: finished with status 'done'\n#8 71.83   Preparing metadata (pyproject.toml): started\n#8 72.76   Preparing metadata (pyproject.toml): finished with status 'error'\n#8 72.84   error: subprocess-exited-with-error\n#8 72.84   \n#8 72.84   \u00d7 Preparing metadata (pyproject.toml) did not run successfully.\n#8 72.84   \u2502 exit code: 1\n#8 72.84   \u2570\u2500> [27 lines of output]\n#8 72.84       Running from numpy source directory.\n#8 72.84       <string>:460: UserWarning: Unrecognized setuptools command, proceeding with generating Cython sources and expanding templates\n#8 72.84       Traceback (most recent call last):\n#8 72.84         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 353, in <module>\n#8 72.84           main()\n#8 72.84         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 335, in main\n#8 72.84           json_out['return_val'] = hook(**hook_input['kwargs'])\n#8 72.84                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n#8 72.84         File \"/usr/local/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 149, in prepare_metadata_for_build_wheel\n#8 72.84           return hook(metadata_directory, config_settings)\n#8 72.84                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n#8 72.84         File \"/tmp/pip-build-env-d5vhprm8/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 380, in prepare_metadata_for_build_wheel\n#8 72.84           self.run_setup()\n#8 72.84         File \"/tmp/pip-build-env-d5vhprm8/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 520, in run_setup\n#8 72.84           super().run_setup(setup_script=setup_script)\n#8 72.84         File \"/tmp/pip-build-env-d5vhprm8/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 317, in run_setup\n#8 72.84           exec(code, locals())  # noqa: S102 # exec is intentional here\n#8 72.84           ^^^^^^^^^^^^^^^^^^^^\n#8 72.84         File \"<string>\", line 489, in <module>\n#8 72.84         File \"<string>\", line 465, in setup_package\n#8 72.84         File \"/tmp/pip-install-on97bj9_/numpy_64981682c8d248699d5fdd002cadbd9e/numpy/distutils/core.py\", line 24, in <module>\n#8 72.84           from numpy.distutils.command import config, config_compiler, \\\n#8 72.84         File \"/tmp/pip-install-on97bj9_/numpy_64981682c8d248699d5fdd002cadbd9e/numpy/distutils/command/config.py\", line 19, in <module>\n#8 72.84           from numpy.distutils.mingw32ccompiler import generate_manifest\n#8 72.84         File \"/tmp/pip-install-on97bj9_/numpy_64981682c8d248699d5fdd002cadbd9e/numpy/distutils/mingw32ccompiler.py\", line 28, in <module>\n#8 72.84           from distutils.msvccompiler import get_build_version as get_build_msvc_version\n#8 72.84       ModuleNotFoundError: No module named 'distutils.msvccompiler'\n#8 72.84       [end of output]\n#8 72.84   \n#8 72.84   note: This error originates from a subprocess, and is likely not a problem with pip.\n#8 72.86 error: metadata-generation-failed\n#8 72.86 \n#8 72.86 \u00d7 Encountered error while generating package metadata.\n#8 72.86 \u2570\u2500> See above for output.\n#8 72.86 \n#8 72.86 note: This is an issue with the package mentioned above, not pip.\n#8 72.86 hint: See above for details.\n#8 73.69 \n#8 73.69 [notice] A new release of pip is available: 24.0 -> 26.2.1\n#8 73.69 [notice] To update, run: pip install --upgrade pip\n#8 ERROR: process \"/bin/sh -c pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\" did not complete successfully: exit code: 1\n------\n > [4/4] RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt:\n72.86 error: metadata-generation-failed\n72.86 \n72.86 \u00d7 Encountered error while generating package metadata.\n72.86 \u2570\u2500> See above for output.\n72.86 \n72.86 note: This is an issue with the package mentioned above, not pip.\n72.86 hint: See above for details.\n73.69 \n73.69 [notice] A new release of pip is available: 24.0 -> 26.2.1\n73.69 [notice] To update, run: pip install --upgrade pip\n------\nDockerfile.runagain:4\n--------------------\n   2 |     WORKDIR /app\n   3 |     COPY . /app\n   4 | >>> RUN pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\n   5 |     \n--------------------\nERROR: failed to build: failed to solve: process \"/bin/sh -c pip install --no-cache-dir --prefer-binary -r requirements.runagain.txt\" did not complete successfully: exit code: 1\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/njsil58102q3zcfenatyrs6u6\n"
+    },
+    "research": [
+      {
+        "title": "Could Not build Wheels for Numpy(Solved) - AskPython",
+        "url": "https://www.askpython.com/python-modules/numpy/solved-could-not-build-wheels-for-numpy",
+        "content": "A wheel is a built package distribution tagged for a Python interpreter and platform. If pip cannot select a compatible wheel, it may build one from a source archive through the package\u2019s PEP 517 build backend, as pip\u2019s installation documentation describes, so the failure may belong to NumPy or another requirement. [...] If Python or platform tags do not match an available wheel, use a supported Python and package combination because NumPy 2.5.3\u2019s current PyPI metadata requires Python 3.12 or newer. Python 3.11 needs an earlier compatible release only if your project permits one.\n If the output says no matching distribution was found, pip did not find an acceptable candidate. That is a resolution or compatibility problem, not a compiler failure. [...] Keep the same interpreter for the repa"
+      },
+      {
+        "title": "Pip Install NumPy Error: How to Fix",
+        "url": "https://www.zerve.ai/data-science-problems/numpy/pip-install-numpy-error",
+        "content": "NumPy contains compiled C code that must match your Python version and operating system. Common causes: outdated pip that can't find the right wheel, missing C compiler when pip tries to build from source, permission errors on system Python, or conflicts with existing packages.\n\n### Solution\n\nThe rule: upgrade pip first, use virtual environments to avoid conflicts, and use --only-binary if compilation fails. If all else fails, try conda which handles binary dependencies better. [...] Zerve\n\nLog InSign Up\n\nBack\n\nData Science Problems /Pip Install NumPy Error - How to Fix It\n\nNumpy\n\n# Pip Install NumPy Error - How to Fix It\n\n### Answer\n\nNumPy installation errors usually stem from Python version conflicts, missing build tools, or permission issues. Fix it by upgrading pip first (pip install -"
+      },
+      {
+        "title": "Failed to build numpy wheel - Python Help - Discussions on Python.org",
+        "url": "https://discuss.python.org/t/failed-to-build-numpy-wheel/45561",
+        "content": "I have consulted the owner but unsure what the error may be as unfamiliar with python\n\nTo build numpy, you need to have C and Fortran compilers installed on your system, as well as C headers for your Python version.\n\nYou can install these with\n\n`sudo apt build-dep python3-numpy`\n\nAre you sure you really need a recent version of numpy? If an older version would work, you can simply install the numpy that ships with Buster\n\n`sudo apt install python3-numpy` [...] It installs up to building the numpy wheel when this error occcurs (1000 lines of output\n\nnote: This error originates from a subprocess, and is likely not a problem with pip.  \nERROR: Failed building wheel for numpy  \nSuccessfully built GoNoteGo  \nFailed to build numpy  \nERROR: Could not build wheels for numpy, which is required to i"
+      },
+      {
+        "title": "ERROR: Failed building wheel for numpy , ERROR: Could not build wheels for numpy, which is required to install pyproject.toml-based projects",
+        "url": "https://stackoverflow.com/questions/70565965/error-failed-building-wheel-for-numpy-error-could-not-build-wheels-for-numpy",
+        "content": "Modified1 year, 10 months ago\n\nViewed 221k times \n\nThis question shows research effort; it is useful and clear\n\n 54 \n\nThis question does not show any research effort; it is unclear or not useful\n\nSave this question.\n\n\n\nwith the numpy version that I installed using `pip install numpy` command. Image 5: enter image description here\n\n2.   Run `poetry lock` to update poetry.lock file(contains details information about the library) Image 6: enter image description here [...] 3.   Run `poetry install` again, & it should work fine.\n\n   In a nutshell, you just have to install the correct version of numpy Click me to check the compatibility  \n   And then install the required version using `pip install numpy==version`.  \nExample: To install NumPy version 1.23.5, use the following- `pip install numpy"
+      },
+      {
+        "title": "BUG: Cannot \"pip install numpy==1.19\" on python 3.7.12 and on M1 \u00b7 Issue #22477 \u00b7 numpy/numpy \u00b7 GitHub",
+        "url": "https://github.com/numpy/numpy/issues/22477",
+        "content": "I need to download this specific version of NumPy on this version of python. I downloaded python from pyenv, which I got from homebrew, and ran \"pip install numpy==1.19\" from a pyenv-virtualenv I also got from homebrew.  \n Note: The error is too long, so I am splitting it in half so I could post it.\n\n### Reproduce the code example:\n\n```\npip install numpy ==1.19\n```\n\n### Error message: [...] ``` [...] ```"
+      }
+    ],
+    "decision": {
+      "failure_class": "python_mismatch",
+      "root_cause": "numpy 1.19.0 does not support Python 3.11; its source distribution attempts to import distutils.msvccompiler which is unavailable, causing build failure.",
+      "confidence": 0.92,
+      "strategy": "pin_version",
+      "change": {
+        "pip_pins": {
+          "numpy": "1.26.0"
+        },
+        "apt_packages": [],
+        "python_version": "3.11",
+        "patch": ""
+      },
+      "verification_command": "python main.py",
+      "sources_used": [
+        "https://www.askpython.com/python-modules/numpy/solved-could-not-build-wheels-for-numpy",
+        "https://www.zerve.ai/data-science-problems/numpy/pip-install-numpy-error",
+        "https://discuss.python.org/t/failed-to-build-numpy-wheel/45561"
+      ]
+    }
+  }
+]
